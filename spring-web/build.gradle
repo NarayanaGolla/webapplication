@@ -1,0 +1,55 @@
+plugins {
+    id 'org.springframework.boot'
+    id 'java'
+    id 'application'
+}
+
+group 'org.training'
+version '1.0-SNAPSHOT'
+
+springBoot {
+    mainClass = 'com.web.application.SpringBootMainApplication'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(':spring-core'))
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compileOnly 'javax.servlet:servlet-api:2.5'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.1.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-common:2.1.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+task(runSimple, type: JavaExec, dependsOn: 'classes') {
+    mainClass.set('com.web.application.SpringBootMainApplication')
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('bootRun') {
+    doFirst {
+        jvmArgs = [
+                '-Xdebug',
+                '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005'
+        ]
+    }
+}

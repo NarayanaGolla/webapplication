@@ -1,0 +1,2 @@
+curl --location 'http://localhost:8080/clients' \ --header 'Content-Type: application/json' \ --data-raw '{"name": "John Doe", "email": "john.doe@baeldgung.com"}'
+

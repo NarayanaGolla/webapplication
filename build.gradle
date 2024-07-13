@@ -1,0 +1,94 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.0' apply false // Use a valid version
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+ext.versions = [
+        springBoot        : '3.1.0', // Ensure this matches the plugin version
+        springSecurity    : '5.4.6',
+        springCloudVersion: '2022.0.3', // Align this with Spring Boot 3.x
+        springCloud       : '2022.0.3', // Align this with Spring Boot 3.x
+        micrometer        : '1.10.3',
+        commonLogging     : '1.2',
+        springAWSCloud    : '2.4.0', // Ensure this is compatible with Spring Boot 3.x
+        springSession     : '2022.0.0' // Ensure this is compatible with Spring Boot 3.x
+]
+
+allprojects {
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+
+    group 'org.training'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:${versions.springBoot}")
+        }
+        dependencies {
+            dependency group: 'commons-logging', name: 'commons-logging', version: versions.commonLogging
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'maven-publish'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+        withSourcesJar()
+    }
+
+    dependencies {
+        implementation platform("org.springframework.boot:spring-boot-dependencies:${versions.springBoot}")
+        implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+        implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
+        implementation 'org.projectlombok:lombok:1.18.20'
+        implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+        implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                versionMapping {
+                    usage('java-api') {
+                        fromResolutionOf('runtimeClasspath')
+                    }
+                    usage('java-runtime') {
+                        fromResolutionResult()
+                    }
+                }
+            }
+        }
+    }
+
+
+}

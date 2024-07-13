@@ -1,0 +1,26 @@
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Directories
+/temp/
+/build/
+/target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# gradle
+.gradle/
