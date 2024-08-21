@@ -18,7 +18,6 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.web.*")
 public class AppConfig {
 
     @Bean
@@ -26,18 +25,5 @@ public class AppConfig {
         return new CustomInterceptor();
     }
 
-//    @Bean(name = "entityManagerFactory")
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-//        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-//        em.setDataSource(dataSource);
-//        em.setPackagesToScan("com.web.*"); // Adjust to your entity package
-//        em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-//        return em;
-//    }
-//
-//    @Bean
-//    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-//        return new JpaTransactionManager(entityManagerFactory);
-//    }
 }
 

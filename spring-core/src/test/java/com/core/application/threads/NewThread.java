@@ -1,4 +1,4 @@
-package com.training.thread;
+package com.core.application.threads;
 
 public class NewThread  implements Runnable {
 
@@ -15,7 +15,7 @@ public class NewThread  implements Runnable {
         try {
             for(int j = 5; j > 0; j--) {
                 System.out.println(name + ": " + j);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             }
         }catch (InterruptedException e) {
             System.out.println(name + " thread Interrupted");

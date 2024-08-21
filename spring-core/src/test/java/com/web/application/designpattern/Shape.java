@@ -1,4 +1,4 @@
-package com.training.designpattern;
+package com.web.application.designpattern;
 
 public interface Shape {
     void draw();

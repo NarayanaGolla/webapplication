@@ -1,2 +1,6 @@
-package com.core.application.collection.utils;public class ListUtils {
+package com.core.application.collection.utils;
+
+public class ListUtils {
+
+
 }

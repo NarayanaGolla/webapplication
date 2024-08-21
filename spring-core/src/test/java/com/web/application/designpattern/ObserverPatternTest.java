@@ -1,4 +1,4 @@
-package com.training.designpattern;
+package com.web.application.designpattern;
 
 /*
 Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified,

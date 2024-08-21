@@ -1,12 +1,12 @@
 package com.web.application.service;
 
-import com.web.application.interceptor.CustomInterceptor;
-import org.springframework.stereotype.Service;
+import com.web.application.dom.Register;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 public interface RegisterService extends DefaultService {
-    @Override
-    Serializable save(Object persistObject);
+
+    List<Register> fetchUserRegisterList();
 }

@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot'
     id 'java'
     id 'application'
+    id 'war'
 }
 
 group 'org.training'
@@ -24,6 +25,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation  'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    runtimeOnly  'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
+
+    //https://medium.com/spring-boot/spring-boot-3-spring-security-6-jwt-authentication-authorization-98702d6313a5
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'org.modelmapper:modelmapper:3.1.1'
 
     compileOnly 'javax.servlet:servlet-api:2.5'
     implementation 'javax.persistence:javax.persistence-api:2.2'
@@ -34,6 +47,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.mockito:mockito-core:5.11.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.10.3'
 }
 
 task(runSimple, type: JavaExec, dependsOn: 'classes') {
@@ -52,4 +66,9 @@ tasks.named('bootRun') {
                 '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005'
         ]
     }
+}
+
+// Customize the WAR task if necessary
+bootWar {
+    archiveFileName = 'gradleproject.war'
 }

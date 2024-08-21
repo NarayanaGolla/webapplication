@@ -1,4 +1,4 @@
-package util.driver;
+package com.web.application.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -34,8 +34,11 @@ public class DriverFactory {
                 WebDriverManager.edgedriver().setup();
                 return new EdgeDriver();
             default:
-                WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
+                //WebDriverManager.chromedriver().setup();
+                System.setProperty("webdriver.chrome.driver", "C:\\Users\\91998\\OneDrive\\Desktop\\chrome\\chromedriver.exe");
+                WebDriver driver = new ChromeDriver();
+
+                return  driver;
         }
     }
 }

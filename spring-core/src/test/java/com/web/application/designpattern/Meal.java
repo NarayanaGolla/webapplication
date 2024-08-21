@@ -1,4 +1,4 @@
-package com.training.designpattern;
+package com.web.application.designpattern;
 
 import java.util.ArrayList;
 import java.util.List;

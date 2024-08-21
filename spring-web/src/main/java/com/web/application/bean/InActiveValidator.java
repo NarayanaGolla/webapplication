@@ -1,4 +1,4 @@
-package com.web.bean;
+package com.web.application.bean;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

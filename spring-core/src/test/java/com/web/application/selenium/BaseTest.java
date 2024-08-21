@@ -1,11 +1,12 @@
-package com.training.springboot.selenium;
+package com.web.application.selenium;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import util.driver.DriverFactory;
 
-import static util.driver.DriverHolder.getDriver;
-import static util.driver.DriverHolder.setDriver;
-import static util.driver.PropertyFileReader.getProperty;
+import static com.web.application.selenium.DriverHolder.getDriver;
+import static com.web.application.selenium.DriverHolder.setDriver;
+import static com.web.application.selenium.PropertyFileReader.getProperty;
+
 
 public class BaseTest {
 

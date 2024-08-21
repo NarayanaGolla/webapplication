@@ -12,11 +12,37 @@ repositories {
 
 dependencies {
 
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.20.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.20.0'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.0'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.1'
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.18.0'
+    implementation group: 'javax.mail', name: 'mail', version: '1.4.7'
 
+
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'com.epam.reportportal:agent-java-testng:5.4.2'
+   /// testImplementation group: 'com.epam.reportportal', name: 'logger-java-log4j', version: '5.2.2'
+
 }
 
 test {
     useJUnitPlatform()
+
+
+    if (project.hasProperty("suitename")) {
+        ext.suitename = project.getProperty("suitename")
+    } else {
+        ext.suitename = 'testng.xml'
+    }
+    useTestNG() {
+        // runlist to executed. path is relative to current folder
+        suites 'src/test/resources/' + suitename
+        ///listeners << 'com.listeners.TestListener'
+    }
 }
+

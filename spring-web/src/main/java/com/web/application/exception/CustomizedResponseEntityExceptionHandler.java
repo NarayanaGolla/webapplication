@@ -1,8 +1,5 @@
-package com.training.springboot.exception;
+package com.web.application.exception;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import java.util.Date;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import com.training.springboot.exception.ExceptionResponse;
-import com.training.springboot.exception.UserNotFoundException;
+
+import java.util.Date;
 
 
 //defining exception handling for all the exceptions
@@ -34,17 +31,6 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                  HttpHeaders headers,
-                                                                  HttpStatus status,
-                                                                  WebRequest request) {
-        ExceptionResponse exceptionResponse= new ExceptionResponse(new Date(),
-                                                                   ex.getMessage(),
-                                                                   ex.getBindingResult().toString());
-//returning exception structure and specific status
-        return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
-    }
 
     @ExceptionHandler(UserNotFoundException.class)
 //override method of ResponseEntityExceptionHandler class

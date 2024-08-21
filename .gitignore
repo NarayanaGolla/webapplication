@@ -10,6 +10,9 @@
 /build/
 /target/
 
+/react-sidebar-new
+react-sidebar-new
+
 # IDEs
 .idea/
 *.iml
@@ -24,3 +27,10 @@ Thumbs.db
 
 # gradle
 .gradle/
+
+allure-results/
+curl/get
+curl/post
+spring-core/build.gradle
+spring-core/build/*
+spring-web/build/

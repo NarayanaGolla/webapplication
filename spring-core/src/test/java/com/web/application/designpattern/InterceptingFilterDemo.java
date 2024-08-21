@@ -1,4 +1,4 @@
-package com.training.designpattern;
+package com.web.application.designpattern;
 
 public class InterceptingFilterDemo {
     public static void main(String[] args) {

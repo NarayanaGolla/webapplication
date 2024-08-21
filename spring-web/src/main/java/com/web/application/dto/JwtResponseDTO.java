@@ -1,2 +1,12 @@
-package com.web.application.dto;public class JwtResponseDTO {
+package com.web.application.dto;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class JwtResponseDTO {
+    private String accessToken;
 }

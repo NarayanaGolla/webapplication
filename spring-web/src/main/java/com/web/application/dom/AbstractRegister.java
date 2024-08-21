@@ -1,14 +1,15 @@
-package com.web.dom;
+package com.web.application.dom;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 //@Data
-//@Getter
-//@Setter
+@Getter
+@Setter
 @MappedSuperclass
 //@EqualsAndHashCode(callSuper = false)
 public abstract class AbstractRegister extends ApplicationId {
@@ -37,68 +38,22 @@ public abstract class AbstractRegister extends ApplicationId {
     @Column(name="createdate")
     private String createDate;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userinfo_id", referencedColumnName = "id")
+    private UserInfo userInfo;
 
-    public String getUserName() {
-        return userName;
+    // Optionally, you can override equals() and hashCode() if necessary
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Register register = (Register) o;
+        return id == register.id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean isInActive() {
-        return inActive;
-    }
-
-    public void setInActive(boolean inActive) {
-        this.inActive = inActive;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
 }

@@ -1,2 +1,4 @@
-package com.core.application.threads;public class ThreadDemo {
+package com.core.application.threads;
+
+public class ThreadDemo {
 }

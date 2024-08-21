@@ -1,2 +1,23 @@
-curl --location 'http://localhost:8080/clients' \ --header 'Content-Type: application/json' \ --data-raw '{"name": "John Doe", "email": "john.doe@baeldgung.com"}'
+https://linuxize.com/post/curl-post-request/
+
+curl --location 'http://localhost:8080/clients' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "John Doe", "email": "john.doe@baeldgung.com"}'
+
+
+curl -d 'name=linuxize&email=linuxize@example.com' https://example.com/form/
+
+curl -d 'name=linuxize' -d 'email=linuxize@example.com' https://example.com/form/
+
+curl -d 'name=John%20Doe'  https://example.com/form/
+
+curl -d @name_of_the_file https://example.com/form/
+
+curl --data-urlencode 'name=John Doe'  https://example.com/form/
+
+
+curl -F 'name=linuxize' -F 'image@photo.jpg' https://example.com/form/
+
+
+echo '{"website": "linuxize.com"}' | curl --json @- http://example.com/api/
 

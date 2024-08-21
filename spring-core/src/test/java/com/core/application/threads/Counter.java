@@ -1,4 +1,4 @@
-package com.training.thread;
+package com.core.application.threads;
 
 class Counter {
     private int count = 0;

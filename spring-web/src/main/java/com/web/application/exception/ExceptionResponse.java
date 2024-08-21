@@ -1,4 +1,4 @@
-package com.training.springboot.exception;
+package com.web.application.exception;
 
 import java.util.Date;
 

@@ -1,7 +1,9 @@
-package pages;
+package com.web.application.selenium;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage  extends BasePage  {
 
@@ -9,9 +11,11 @@ public class LoginPage  extends BasePage  {
         super(driver);
     }
 
-    private final By emailTextBox = By.id("email");
-    private final By passwordTextBox = By.id("passwd");
-    private final By signInButton = By.id("SubmitLogin");
+    private final By emailTextBox = By.id("username");
+
+    private final By passwordTextBox = By.id("password");
+
+    private final By signInButton = By.cssSelector(".btn__primary--large");
 
     public void setEmail(String email) {
         sendKeys(emailTextBox, email);

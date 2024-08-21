@@ -1,4 +1,4 @@
-package com.training.thread;
+package com.core.application.threads;
 
 public class CounterThread extends Thread {
     private Counter counter;

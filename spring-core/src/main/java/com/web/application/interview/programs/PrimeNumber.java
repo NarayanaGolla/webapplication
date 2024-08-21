@@ -1,4 +1,4 @@
-package com.training.interview;
+package com.web.application.interview.programs;
 
 public class PrimeNumber {
     public static void main(String[] args) {

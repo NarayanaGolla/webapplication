@@ -1,18 +1,19 @@
-package com.training.springboot.selenium;
+package com.web.application.selenium;
 
+import io.qameta.allure.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.time.Duration;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.support.ui.Select;
+
+import org.testng.annotations.Test;
 
 public class AmazonWebDriverTest {
 
@@ -33,6 +34,16 @@ public class AmazonWebDriverTest {
         driver.get("https://www.amazon.com/");
     }
 
+
+    @Description("This test attempts to log into the website using a login and a password. Fails if any error happens.\n\nNote that this test does not test 2-Factor Authentication.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Owner("John Doe")
+    @Link(name = "Website", url = "https://dev.example.com/")
+    @Issue("AUTH-123")
+    @TmsLink("TMS-456")
+    @Epic("Web interface")
+    @Feature("Essential features")
+    @Story("Authentication")
     @Test(priority = 3 , enabled = true )
     public void verifySearchAmazonOptions() throws InterruptedException {
         //Maximizing window

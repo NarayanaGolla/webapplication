@@ -1,2 +1,4 @@
-package com.core.application.collection.utils;public class ComparableUtils {
+package com.core.application.collection.utils;
+
+public class ComparableUtils {
 }

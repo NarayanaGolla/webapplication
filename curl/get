@@ -1,0 +1,13 @@
+curl -X GET https://api.example.com/resource
+
+curl -X POST -d "key1=value1&key2=value2" https://api.example.com/resource
+
+curl -o hello.zip ftp://speedtest.tele2.net/1MB.zip
+
+curl -T uploadfile.txt ftp://example.com/upload/
+
+curl -u username:password https://example.com/api
+
+curl -C - -O ftp://speedtest.tele2.net/1MB.zip
+
+curl --url "smtp://[SMTP_URL]" --mail-from "[sender_email]" --mail-rcpt "[recipient_email]" --ssl-reqd --user "{email}:{password}" --upload-file "[path_to_email_text_file]"

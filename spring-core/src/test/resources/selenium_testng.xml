@@ -2,9 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name = "parallel method suite" parallel="methods">
+<!--    <listeners>-->
+<!--        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"></listener>-->
+<!--    </listeners>-->
+
+    
     <test name = "parallel method test" group-by-instances="true">
         <classes>
-            <class name = "com.training.springboot.selenium.AmazonWebDriverTest"/>
+            <class name = "com.web.application.selenium.LoginTest"/>
         </classes>
     </test>
 </suite>

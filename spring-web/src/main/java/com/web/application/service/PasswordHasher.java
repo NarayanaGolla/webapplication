@@ -1,2 +1,16 @@
-package com.web.application.service;public class PasswordHasher {
+package com.web.application.service;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+public class PasswordHasher {
+    public static void main(String[] args) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String rawPassword = "password";
+        String encodedPassword = passwordEncoder.encode(rawPassword);
+        System.out.println(encodedPassword);
+
+//        public boolean checkPassword(String rawPassword, String storedHash) {
+//            return passwordEncoder.matches(rawPassword, storedHash);
+//        }
+    }
 }

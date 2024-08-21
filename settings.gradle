@@ -1,4 +1,5 @@
 rootProject.name = 'webapplication'
-include "spring-web"
+
 include "spring-core"
+include "spring-web"
 

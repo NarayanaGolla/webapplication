@@ -1,9 +1,8 @@
 package com.training.javamail;
 
-import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.activation.*;
+import java.util.Properties;
 
 public class JavaMailDemo {
     public static void main(String[] args) {
