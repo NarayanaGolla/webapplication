@@ -5,8 +5,10 @@ jobs:
     runs-on:
     steps:
       -name: Simple-Javascript Action
+       id: hello
        uses: actions/hello-world-javascript-action@v1
        with:
         who-to-greet: devopshit
+        
       -name : Get the output time
        run: echo "${{steps.hello.outputs.time}}"
