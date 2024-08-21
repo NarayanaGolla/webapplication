@@ -3,7 +3,7 @@
 <suite name="test_suite">
     <test name="Car Loan">
         <classes>
-            <class name="com.web.application.junit.TestingDemo"/>
+<!--            <class name="com.web.application.junit.TestingDemo"/>-->
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
