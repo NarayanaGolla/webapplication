@@ -1,1 +1,12 @@
 name: Action Workflow
+on: [push]
+jobs:
+  run-github-actions:
+    runs-on:
+    steps:
+      -name: Simple-Javascript Action
+       uses: actions/hello-world-javascript-action@v1
+       with:
+        who-to-greet: devopshit
+      -name : Get the output time
+       run: echo "${{steps.hello.outputs.time}}"
