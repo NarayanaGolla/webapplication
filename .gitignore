@@ -11,7 +11,8 @@
 /target/
 
 /react-sidebar-new
-react-sidebar-new
+/react-sidebar-new/node_modules
+/react-sidebar-new/build
 
 # IDEs
 .idea/
