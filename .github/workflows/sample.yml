@@ -1,10 +1,18 @@
 name: Action Workflow
-on: [push]
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Simple-Javascript Action
         id: hello
         uses: actions/hello-world-javascript-action@v1
@@ -13,3 +21,12 @@ jobs:
         
       - name: Get the output time
         run: echo "${{ steps.hello.outputs.time }}"
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew build
