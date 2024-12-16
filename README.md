@@ -9,5 +9,3 @@
   - .gitignore
 - ReadMe
 - Commit and Push the changes
-
-Narayana
