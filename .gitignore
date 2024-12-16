@@ -1,0 +1,37 @@
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Directories
+/temp/
+/build/
+/target/
+
+/react-sidebar-new
+/react-sidebar-new/node_modules
+/react-sidebar-new/build
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# gradle
+.gradle/
+
+allure-results/
+curl/get
+curl/post
+spring-core/build.gradle
+spring-core/build/*
+spring-web/build/
