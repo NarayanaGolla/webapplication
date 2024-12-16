@@ -10,9 +10,10 @@
 /build/
 /target/
 
-/react-sidebar-new
-/react-sidebar-new/node_modules
-/react-sidebar-new/build
+
+/cogreactjs/node_modules
+/cogreactjs/build
+
 
 # IDEs
 .idea/
@@ -35,3 +36,9 @@ curl/post
 spring-core/build.gradle
 spring-core/build/*
 spring-web/build/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build

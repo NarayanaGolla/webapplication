@@ -9,3 +9,7 @@
   - .gitignore
 - ReadMe
 - Commit and Push the changes
+
+## Task 2
+
+- Create React js Project
