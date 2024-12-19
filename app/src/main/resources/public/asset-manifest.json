@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/app/static/css/main.1a74409f.css",
+    "main.js": "/app/static/js/main.d7ecc2b6.js",
+    "static/js/488.5a345aea.chunk.js": "/app/static/js/488.5a345aea.chunk.js",
+    "static/media/tableimage.jpeg": "/app/static/media/tableimage.0131ae9a913c367c0e1e.jpeg",
+    "static/media/logo.svg": "/app/static/media/logo.77646688f32f3fd707913e06fee83eaa.svg",
+    "static/media/database.svg": "/app/static/media/database.655702a1cf2eeeca66211cc73123df7e.svg",
+    "static/media/sceduled.svg": "/app/static/media/sceduled.581f6358c6805f3526b541631cd43f8b.svg",
+    "static/media/social.svg": "/app/static/media/social.90efc33f513f2c9b785ce4412cbc917e.svg",
+    "static/media/userlogin.svg": "/app/static/media/userlogin.ffb69e17f51c2933195c4da6c9a10c34.svg",
+    "static/media/home-solid.svg": "/app/static/media/home-solid.831db11df61127740a8d5f67fb8952cb.svg",
+    "static/media/power-off-solid.svg": "/app/static/media/power-off-solid.64f21014c828ee1ee201f3a796f884df.svg",
+    "index.html": "/app/index.html",
+    "static/media/draft.svg": "/app/static/media/draft.cbc488ec750666825d8a9b5e319bdead.svg",
+    "static/media/starred.svg": "/app/static/media/starred.3f5eb997d90860946b7a4f3e38088eb4.svg",
+    "main.1a74409f.css.map": "/app/static/css/main.1a74409f.css.map",
+    "main.d7ecc2b6.js.map": "/app/static/js/main.d7ecc2b6.js.map",
+    "488.5a345aea.chunk.js.map": "/app/static/js/488.5a345aea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a74409f.css",
+    "static/js/main.d7ecc2b6.js"
+  ]
+}
