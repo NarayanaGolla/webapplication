@@ -42,3 +42,5 @@ spring-web/build/
 
 # Ignore Gradle build output directory
 build
+
+shellscript/
