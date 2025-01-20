@@ -1,8 +1,10 @@
 package com.cog.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +26,7 @@ public class ProfileController {
     }
 
     @GetMapping("/active-profile")
+    @PreAuthorize("hasRole('ADMIN')")
     public String getActiveProfile1() {
         return String.join(", ", environment.getActiveProfiles());
     }

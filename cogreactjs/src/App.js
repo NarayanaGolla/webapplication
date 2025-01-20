@@ -1,7 +1,11 @@
 import { Route, Routes, useLocation } from "react-router";
 import Sidebar from "./Sidebar";
 import styled from "styled-components";
+
+//Pages
 import HomePage from "./Pages/HomePage";
+import RegistrationPage from "./Pages/RegistrationPage";
+import LoginPage from "./Pages/LoginPage";
 
 const Pages = styled.div`
   width: 100vw;
@@ -18,6 +22,15 @@ const Pages = styled.div`
   }
 `;
 
+function MultiPathRoute({ paths, element }) {
+  const location = useLocation();
+  if (paths.includes(location.pathname)) {
+    return element;
+  }
+  return null;
+}
+
+
 function App() {
   const location = useLocation();
    return (
@@ -25,7 +38,14 @@ function App() {
         <Sidebar />
         <Pages>
             <Routes location={location} key={location.pathname}>
-               <Route path="/" element={<HomePage />} />
+             <Route
+                path="*"
+                element={<MultiPathRoute paths={["/", "/home"]} element={<HomePage />} />}
+              />
+
+               <Route path="/register" element={<RegistrationPage />} />
+               <Route path="/login" element={<LoginPage />} />
+
             </Routes>
         </Pages>
       </>

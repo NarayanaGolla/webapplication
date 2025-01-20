@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=webdb
+    ports:
+      - "3307:3306"
+
+  springboot-app:
+    image: test
+    container_name: test-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container:3306/webdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
