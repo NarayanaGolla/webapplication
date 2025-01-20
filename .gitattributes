@@ -10,3 +10,7 @@
 * text=auto
 *.sh text eol=lf
 *.bat text eol=crlf
+
+
+#git config --global core.autocrlf input
+
