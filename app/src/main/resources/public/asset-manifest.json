@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/gradleproject/static/css/main.2ed67084.css",
+    "main.js": "/gradleproject/static/js/main.c746bdd5.js",
+    "static/js/453.ad6eb26e.chunk.js": "/gradleproject/static/js/453.ad6eb26e.chunk.js",
+    "static/media/tableimage.jpeg": "/gradleproject/static/media/tableimage.0131ae9a913c367c0e1e.jpeg",
+    "static/media/logo.svg": "/gradleproject/static/media/logo.77646688f32f3fd707913e06fee83eaa.svg",
+    "static/media/database.svg": "/gradleproject/static/media/database.655702a1cf2eeeca66211cc73123df7e.svg",
+    "static/media/sceduled.svg": "/gradleproject/static/media/sceduled.581f6358c6805f3526b541631cd43f8b.svg",
+    "static/media/social.svg": "/gradleproject/static/media/social.90efc33f513f2c9b785ce4412cbc917e.svg",
+    "static/media/userlogin.svg": "/gradleproject/static/media/userlogin.ffb69e17f51c2933195c4da6c9a10c34.svg",
+    "index.html": "/gradleproject/index.html",
+    "static/media/home-solid.svg": "/gradleproject/static/media/home-solid.831db11df61127740a8d5f67fb8952cb.svg",
+    "static/media/power-off-solid.svg": "/gradleproject/static/media/power-off-solid.64f21014c828ee1ee201f3a796f884df.svg",
+    "static/media/draft.svg": "/gradleproject/static/media/draft.cbc488ec750666825d8a9b5e319bdead.svg",
+    "static/media/starred.svg": "/gradleproject/static/media/starred.3f5eb997d90860946b7a4f3e38088eb4.svg",
+    "main.2ed67084.css.map": "/gradleproject/static/css/main.2ed67084.css.map",
+    "main.c746bdd5.js.map": "/gradleproject/static/js/main.c746bdd5.js.map",
+    "453.ad6eb26e.chunk.js.map": "/gradleproject/static/js/453.ad6eb26e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ed67084.css",
+    "static/js/main.c746bdd5.js"
+  ]
+}

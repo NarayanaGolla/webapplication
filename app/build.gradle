@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+dependencies {
+   // implementation project(':common')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl:1.2'
+    implementation 'org.json:json:20250107'
+    testImplementation "com.github.tomakehurst:wiremock-standalone:2.27.2"
+    testImplementation group: 'org.testng', name: 'testng', version: '7.11.0'
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.1'
+}
